@@ -6,6 +6,7 @@ Lightweight, modern boilerplate built with electron, typescript, and react.
 
 - [React.js 17](https://reactjs.org/)
 - [Electron 12](https://www.electronjs.org/)
+- [Webpack 5](https://webpack.js.org/)
 
 ## Developer Experience
 
@@ -34,6 +35,14 @@ cd myapp
 
 3. Run `npm install` to install dependencies
 4. Run `npm run dev` to build and run the site locally
+
+## About
+
+This project is meant to be as lightweight as possible to help developers get started with electron and react as quickly as possible.
+
+Because a new version of electron is used, Babel is not used for transpiling. Plain TypeScript is used instead.
+
+Live reloading is included thanks to webpack 5 and webpack-dev-server.
 
 ## Contributing
 
