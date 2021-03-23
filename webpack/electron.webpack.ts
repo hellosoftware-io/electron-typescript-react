@@ -1,8 +1,9 @@
-const path = require("path");
+import * as path from "path";
+import { Configuration } from "webpack";
 
 const rootPath = path.resolve(__dirname, "..");
 
-module.exports = {
+const config: Configuration = {
   mode: "development",
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
@@ -29,3 +30,5 @@ module.exports = {
     filename: "[name].js",
   },
 };
+
+export default config;

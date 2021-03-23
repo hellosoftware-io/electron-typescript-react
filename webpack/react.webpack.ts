@@ -1,9 +1,9 @@
-const path = require("path");
+import * as path from "path";
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const rootPath = path.resolve(__dirname, "..");
 
-module.exports = {
+const config = {
   mode: "development",
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
@@ -31,13 +31,6 @@ module.exports = {
     port: 4000,
     historyApiFallback: true,
     compress: true,
-    // contentBase: path.join(rootPath, 'dist/renderer'),
-    // historyApiFallback: true,
-    // compress: true,
-    // hot: true,
-    // host: '0.0.0.0',
-    // port: 4000,
-    // publicPath: '/',
   },
   output: {
     path: path.resolve(rootPath, "dist/renderer"),
@@ -46,3 +39,5 @@ module.exports = {
   },
   plugins: [new HtmlWebpackPlugin()],
 };
+
+export default config;

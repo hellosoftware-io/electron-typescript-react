@@ -6,14 +6,14 @@
   "main": "./dist/main.js",
   "scripts": {
     "dev": "npm-run-all -p dev:react electron:serve",
-    "dev:electron": "cross-env NODE_ENV=development webpack --config webpack/electron.webpack.js --mode development && npm run start:electron",
-    "dev:react": "cross-env NODE_ENV=development webpack-dev-server --config webpack/react.webpack.js --mode development",
+    "dev:electron": "cross-env NODE_ENV=development webpack --config webpack/electron.webpack.ts --mode development && npm run start:electron",
+    "dev:react": "cross-env NODE_ENV=development webpack-dev-server --config webpack/react.webpack.ts --mode development",
     "electron:serve": "wait-on http-get://localhost:4000/ && npm run dev:electron",
     "start:electron": "electron .",
     "build": "npm-run-all build:electron build:react",
     "build:run": "npm-run-all build start:electron",
-    "build:electron": "webpack --config webpack/electron.webpack.js",
-    "build:react": "webpack --config webpack/react.webpack.js",
+    "build:electron": "webpack --config webpack/electron.webpack.ts",
+    "build:react": "webpack --config webpack/react.webpack.ts",
     "package": "npm-run-all build package:dist",
     "package:dist": "electron-builder --dir"
   },
@@ -25,6 +25,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@types/node": "^14.14.35",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
     "@typescript-eslint/eslint-plugin": "^4.19.0",
@@ -39,11 +40,12 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
     "ts-loader": "^8.0.18",
+    "ts-node": "^9.1.1",
     "typescript": "^4.2.3",
     "wait-on": "^5.3.0",
     "webpack": "^5.27.2",
     "webpack-cli": "^4.5.0",
-    "webpack-dev-server": "^4.0.0-beta.0"
+    "webpack-dev-server": "^4.0.0-beta.1"
   },
   "build": {
     "appId": "com.company.app",
