@@ -1,32 +1,32 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const rootPath = path.resolve(__dirname, '..');
+const rootPath = path.resolve(__dirname, "..");
 
 module.exports = {
-  mode: 'development',
+  mode: "development",
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
-    mainFields: ['main', 'module', 'browser'],
+    extensions: [".tsx", ".ts", ".js"],
+    mainFields: ["main", "module", "browser"],
   },
-  entry: path.resolve(rootPath, 'src', 'App.tsx'),
-  target: 'electron-renderer',
-  devtool: 'source-map',
+  entry: path.resolve(rootPath, "src/renderer", "App.tsx"),
+  target: "electron-renderer",
+  devtool: "source-map",
   module: {
     rules: [
       {
         test: /\.(js|ts|tsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'ts-loader',
+          loader: "ts-loader",
         },
       },
     ],
   },
   devServer: {
-    static: path.join(rootPath, 'dist/renderer'),
+    static: path.join(rootPath, "dist/renderer"),
     dev: {
-      publicPath: '/',
+      publicPath: "/",
     },
     port: 4000,
     historyApiFallback: true,
@@ -40,9 +40,9 @@ module.exports = {
     // publicPath: '/',
   },
   output: {
-    path: path.resolve(rootPath, 'dist/renderer'),
-    filename: 'js/[name].js',
-    publicPath: './',
+    path: path.resolve(rootPath, "dist/renderer"),
+    filename: "js/[name].js",
+    publicPath: "./",
   },
   plugins: [new HtmlWebpackPlugin()],
 };

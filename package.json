@@ -1,6 +1,7 @@
 {
-  "name": "electron-react-typescript",
+  "name": "electron-typescript-react",
   "version": "1.0.0",
+  "private": true,
   "description": "An Electron boilerplate including TypeScript, React, Jest and ESLint.",
   "main": "./dist/main.js",
   "scripts": {
