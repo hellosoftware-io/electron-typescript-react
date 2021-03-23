@@ -2,7 +2,7 @@
   "name": "electron-typescript-react",
   "version": "1.0.0",
   "private": true,
-  "description": "An Electron boilerplate including TypeScript, React, Jest and ESLint.",
+  "description": "Lightweight, modern boilerplate built with electron, typescript, and react.",
   "main": "./dist/main.js",
   "scripts": {
     "dev": "npm-run-all -p dev:react electron:serve",
